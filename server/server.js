@@ -19,6 +19,7 @@ const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 
 
+
 const multer = require('multer');
 const app = express();
 app.use(express.json());
@@ -43,6 +44,14 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, // Your email password or app password
   },
 });
+
+const allowedOrigins = ["https://baggify-h8a6.vercel.app/"];
+
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+}));
+
 
 // Multer setup for handling file uploads
 const storage = multer.diskStorage({
