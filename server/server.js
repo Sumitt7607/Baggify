@@ -376,8 +376,8 @@ app.post('/api/checkout', authMiddleware, async (req, res) => {
       payment_method_types: ['card'],
       line_items: lineItems,
       mode: 'payment',
-     success_url: 'http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}',
-      cancel_url: 'http://localhost:5173/cart',
+    success_url: 'https://baggify-h8a6.vercel.app/success?session_id={CHECKOUT_SESSION_ID}',
+  cancel_url: 'https://baggify-h8a6.vercel.app/cart',
       metadata: {
         userId: user._id.toString(),
       }
