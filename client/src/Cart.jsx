@@ -20,7 +20,7 @@ const CartItemsGrid = () => {
       if (!token) return alert('Please login to view your cart.');
 
       try {
-        const res = await axios.get('http://localhost:3001/api/cart', {
+        const res = await axios.get('https://baggify-backendcode.onrender.com/api/cart', {
           headers: { Authorization: `Bearer ${token}` },
         });
         setCartItems(res.data);
@@ -37,7 +37,7 @@ const CartItemsGrid = () => {
     if (!token) return alert('Please login first.');
 
     try {
-      await axios.delete(`http://localhost:3001/api/cart/${productId}`, {
+      await axios.delete(`https://baggify-backendcode.onrender.com/api/cart/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setCartItems(cartItems.filter((item) => item._id !== productId));
@@ -57,7 +57,7 @@ const CartItemsGrid = () => {
 
     try {
       const res = await axios.post(
-        'http://localhost:3001/api/checkout',
+        'https://baggify-backendcode.onrender.com/api/checkout',
         { address },
         {
           headers: { Authorization: `Bearer ${token}` },
@@ -92,7 +92,7 @@ const CartItemsGrid = () => {
               {cartItems.map((item) => (
                 <div key={item._id} style={styles.card}>
                   <img
-                    src={`http://localhost:3001/${item.image}`}
+                    src={`https://baggify-backendcode.onrender.com/${item.image}`}
                     alt={item.name}
                     style={styles.image}
                   />

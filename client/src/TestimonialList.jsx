@@ -6,7 +6,7 @@ const TestimonialList = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:3001/api/testimonials')
+      .get('https://baggify-backendcode.onrender.com/api/testimonials')
       .then((res) => setTestimonials(res.data))
       .catch((err) => console.error('Error fetching testimonials:', err));
   }, []);

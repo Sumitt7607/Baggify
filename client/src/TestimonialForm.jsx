@@ -64,7 +64,7 @@ const TestimonialForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:3001/api/testimonials', formData);
+      await axios.post('https://baggify-backendcode.onrender.com/api/testimonials', formData);
       setMessage('Thank you for your feedback!');
       setFormData({ name: '', description: '', rating: 5 });
     } catch (err) {

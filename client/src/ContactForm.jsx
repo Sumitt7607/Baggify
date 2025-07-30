@@ -19,7 +19,7 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:3001/api/contact', formData);
+      const response = await axios.post('https://baggify-backendcode.onrender.com/api/contact', formData);
       if (response.data.success) {
         setStatus('Message sent successfully!');
         setFormData({ name: '', email: '', message: '' });

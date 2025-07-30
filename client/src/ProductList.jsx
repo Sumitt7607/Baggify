@@ -20,7 +20,7 @@ export default function ProductList() {
     }
 
     axios
-      .get('http://localhost:3001/api/products')
+      .get('https://baggify-backendcode.onrender.com/api/products')
       .then((res) => setProducts(res.data))
       .catch((err) => console.error('Error fetching products:', err));
   }, [token]);
@@ -32,7 +32,7 @@ export default function ProductList() {
     }
 
     try {
-      await axios.post(`http://localhost:3001/api/cart/${productId}`, {}, {
+      await axios.post(`https://baggify-backendcode.onrender.com/api/cart/${productId}`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Added to cart!');
@@ -49,7 +49,7 @@ export default function ProductList() {
     }
 
     try {
-      await axios.post(`http://localhost:3001/api/wishlist/${productId}`, {}, {
+      await axios.post(`https://baggify-backendcode.onrender.com/api/wishlist/${productId}`, {}, {
         headers: { Authorization: `Bearer ${token}` },
       });
       alert('Added to wishlist!');
@@ -143,7 +143,7 @@ export default function ProductList() {
                 >
                   {product.image && (
                     <img
-                      src={`http://localhost:3001/${product.image.replace(/\\/g, '/')}`}
+                      src={`https://baggify-backendcode.onrender.com/${product.image.replace(/\\/g, '/')}`}
                       alt={product.name}
                       className="card-img-top product-image"
                     />

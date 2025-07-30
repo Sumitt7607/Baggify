@@ -17,7 +17,7 @@ export default function Wishlist() {
 
   const fetchWishlist = () => {
     axios
-      .get('http://localhost:3001/api/wishlist', {
+      .get('https://baggify-backendcode.onrender.com/api/wishlist', {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => setWishlistItems(res.data))
@@ -33,7 +33,7 @@ export default function Wishlist() {
 
   const removeFromWishlist = async (productId) => {
     try {
-      await axios.delete(`http://localhost:3001/api/wishlist/${productId}`, {
+      await axios.delete(`https://baggify-backendcode.onrender.com/api/wishlist/${productId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setWishlistItems((prevItems) =>
@@ -59,7 +59,7 @@ export default function Wishlist() {
               <div className="card h-100 shadow">
                 {product.image && (
                   <img
-                    src={`http://localhost:3001/${product.image.replace(/\\/g, '/')}`}
+                    src={`https://baggify-backendcode.onrender.com/${product.image.replace(/\\/g, '/')}`}
                     alt={product.name}
                     className="card-img-top"
                   />

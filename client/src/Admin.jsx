@@ -30,7 +30,7 @@ export default function Admin() {
     formData.append('image', image);
 
     try {
-      const response = await axios.post('http://localhost:3001/api/products', formData);
+      const response = await axios.post('https://baggify-backendcode.onrender.com/api/products', formData);
       alert('Product added!');
       console.log('Response:', response.data);
     } catch (err) {

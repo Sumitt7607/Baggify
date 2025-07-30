@@ -6,7 +6,7 @@ const ProductManager = () => {
   const [editProduct, setEditProduct] = useState(null);
 
   const fetchProducts = async () => {
-    const res = await fetch('http://localhost:3001/api/products');
+    const res = await fetch('https://baggify-backendcode.onrender.com/api/products');
     const data = await res.json();
     setProducts(data);
   };
@@ -19,7 +19,7 @@ const ProductManager = () => {
     const confirm = window.confirm("Are you sure you want to delete?");
     if (!confirm) return;
 
-    const res = await fetch(`http://localhost:3001/api/products/${id}`, {
+    const res = await fetch(`https://baggify-backendcode.onrender.com/api/products/${id}`, {
       method: 'DELETE'
     });
 
@@ -37,7 +37,7 @@ const ProductManager = () => {
   };
 
   const handleUpdate = async () => {
-    const res = await fetch(`http://localhost:3001/api/products/${editProduct._id}`, {
+    const res = await fetch(`https://baggify-backendcode.onrender.com/api/products/${editProduct._id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'

@@ -13,7 +13,7 @@ function Login() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:3001/login', { email, password })
+        axios.post('https://baggify-backendcode.onrender.com/login', { email, password })
             .then(res => {
                 if (res.data.token) {
                     localStorage.setItem('token', res.data.token);
