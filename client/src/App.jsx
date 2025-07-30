@@ -15,7 +15,7 @@ import PrivacyPolicy from './PrivacyPolicy';
 import Cart from './Cart';
 import Wishlist from './Wishlist';
 import ProductList from './ProductList';
-import Success from './success';
+import Success from './Success';
 // import Success from './Success'.
 
 function App() {
