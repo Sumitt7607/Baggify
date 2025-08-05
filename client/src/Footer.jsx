@@ -9,7 +9,7 @@ const Footer = () => {
       <div className="footer-container">
         {/* Company Info */}
         <div className="footer-section">
-          <h2>YourCompany</h2>
+          <h2>Baggify</h2>
           <p>
             Our Company is dedicated to providing quality products and excellent
             service. Shop with confidence.
